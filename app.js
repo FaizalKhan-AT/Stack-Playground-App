@@ -56,7 +56,7 @@ const popElement = () => {
 };
 const peepElement = () => {
   message.innerText = "";
-  message.innerText = `Popped Element is ${stack[stack.length - 1]}`;
+  message.innerText = `Top Element is ${stack[stack.length - 1]}`;
   renderStack();
   pushInput.focus();
 };
