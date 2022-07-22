@@ -1,0 +1,41 @@
+:root {
+  --bg-color: #0e0f26;
+  --color: #fffcff;
+  --border-color: #5f23a5;
+  --element-bg: #302399;
+}
+body {
+  background: var(--bg-color);
+  color: var(--color);
+  height: 100vh !important;
+}
+.form-control,
+.btn {
+  box-shadow: none !important;
+}
+.form-control {
+  background: transparent !important;
+  border-color: var(--border-color) !important;
+  caret-color: var(--border-color);
+  color: var(--color) !important;
+}
+.stack {
+  height: 520px;
+  border: 1px solid var(--border-color);
+  width: 300px;
+  border-top-color: transparent;
+}
+.element {
+  width: 100%;
+  height: 30px;
+  background: var(--element-bg);
+  background: var(--border-color);
+}
+.outline-btn {
+  border: 1px solid var(--border-color);
+  color: var(--border-color);
+}
+.outline-btn:hover {
+  background: var(--border-color);
+  color: var(--color);
+}
