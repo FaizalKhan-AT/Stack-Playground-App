@@ -55,6 +55,11 @@ const popElement = () => {
   pushInput.focus();
 };
 const peepElement = () => {
+  if (stack.length === 0) {
+    message.innerHTML =
+      "<span class='text-danger'>Error: Stack Underflow Cannot Peep Element</span>";
+    return;
+  }
   message.innerText = "";
   message.innerText = `Top Element is ${stack[stack.length - 1]}`;
   renderStack();
