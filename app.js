@@ -1,9 +1,16 @@
+import { checkParenthesis } from "./balancedParanthesis.js";
+import { delay } from "./utils.js";
+
 const stackContainer = document.querySelector(".stack");
 const message = document.querySelector(".msg-box");
+const messageCheck = document.querySelector(".msg-box-check");
 const pushInput = document.getElementById("push-inp");
+const checkInput = document.getElementById("check-inp");
 const pushBtn = document.getElementById("push-btn");
+const checkBtn = document.getElementById("check-btn");
 const popBtn = document.getElementById("pop-btn");
 const peepBtn = document.getElementById("peep-btn");
+const expMsg = document.querySelector(".expression");
 
 let stack = [];
 
@@ -11,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   pushBtn.addEventListener("click", pushElement);
   popBtn.addEventListener("click", popElement);
   peepBtn.addEventListener("click", peepElement);
+  checkBtn.addEventListener("click", sendValuetoCheck);
 });
 const renderStack = () => {
   let html = stack
@@ -64,4 +72,18 @@ const peepElement = () => {
   message.innerText = `Top Element is ${stack[stack.length - 1]}`;
   renderStack();
   pushInput.focus();
+};
+const sendValuetoCheck = async () => {
+  let value = checkInput.value;
+  expMsg.innerText = "";
+  if (checkInput.value === "") {
+    messageCheck.innerHTML =
+      "<span class='text-danger'>Error: Input field is empty!!</span>";
+    return;
+  }
+  checkInput.value = "";
+  expMsg.innerText = value;
+  let str = (await checkParenthesis(value)) ? "balanced" : "not balanced";
+  messageCheck.innerHTML = `Parenthesis are  ${str} `;
+  checkInput.value = "";
 };

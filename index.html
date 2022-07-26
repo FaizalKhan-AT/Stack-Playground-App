@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="./app.js" defer></script>
+    <script type="module" src="./app.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -42,6 +42,52 @@
             </div>
           </div>
           <h4 class="msg-box"></h4>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="line my-4"></div>
+    <!-- balanced parenthesis -->
+
+    <div class="container">
+      <div class="text-center h3">Balanced Parenthesis Check</div>
+      <div class="row w-100 justify-content-center">
+        <div
+          class="col-md-6 d-flex gap-3 align-items-center flex-column justify-content-center"
+        >
+          <br />
+          <div
+            class="check-stack stack mt-5 d-flex flex-column-reverse px-2 pb-2"
+          ></div>
+          <h4>Stack</h4>
+        </div>
+        <div
+          class="d-flex flex-column mt-5 col-md-6 justify-content-center align-items-center gap-3"
+        >
+          <div class="d-flex mb-5 align-items-center gap-3">
+            <div class="d-flex flex-column">
+              <span class="d-flex align-items-center gap-2">
+                <input type="text" class="form-control fs-3" id="check-inp" />
+              </span>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="btn btn-lg outline-btn fw-bold" id="check-btn">
+                check
+              </div>
+            </div>
+            <!-- <div class="d-flex flex-column">
+              <span class="d-flex align-items-center gap-2">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="delay-inp"
+                  placeholder="delay(500)"
+                />
+              </span>
+            </div> -->
+          </div>
+          <div class="h2 fw-bold expression"></div>
+          <h4 class="msg-box-check"></h4>
         </div>
       </div>
     </div>
